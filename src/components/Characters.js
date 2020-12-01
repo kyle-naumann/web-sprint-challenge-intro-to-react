@@ -4,11 +4,9 @@ import axios from "axios"
 import CharacterCard from "./CharacterCard"
 
 function Characters() {
-    
     const [character, setCharacter] = useState([]);
 
     useEffect(() => {
-    
         axios
             .get('https://swapi.dev/api/people')
             .then((res) =>
@@ -18,7 +16,6 @@ function Characters() {
     }, []);
     
 return (
-
         <div className="character">
             {character.length && character.map((character) => {
                 return <CharacterCard key={Math.random()} character= {character} />

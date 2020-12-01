@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col, Container } from 'reactstrap';
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Col,} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const CharacterCard = ({ character }) => {
     const { name, height, birth_year, eye_color, hair_color} = character;
@@ -9,10 +10,9 @@ const CharacterCard = ({ character }) => {
 
   return (
 
-   <Col className = "button" > <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>
-    {name}
-      </DropdownToggle>
+   <Col className = "button" > <ButtonDropdown color = "info" isOpen={dropdownOpen} toggle={toggle}>
+      <DropdownToggle caret>{name}</DropdownToggle>
+      
       <DropdownMenu>
         <DropdownItem header>Height: {height}</DropdownItem>
         <DropdownItem divider />
@@ -22,6 +22,7 @@ const CharacterCard = ({ character }) => {
         <DropdownItem divider />
         <DropdownItem disabled>Hair Color: {hair_color}</DropdownItem>
       </DropdownMenu>
+    
     </ButtonDropdown>
     </Col>
     
